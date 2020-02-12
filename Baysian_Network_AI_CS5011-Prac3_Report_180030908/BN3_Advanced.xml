@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Prediction for child having diabetes</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7774.0, 5395.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Age of Child</NAME>
+	<OUTCOME>&gt;45</OUTCOME>
+	<OUTCOME>&lt;45</OUTCOME>
+	<PROPERTY>position = (7782.0, 5144.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Obesity</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (8113.0, 5392.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Gender</NAME>
+	<OUTCOME>Male</OUTCOME>
+	<OUTCOME>Female</OUTCOME>
+	<PROPERTY>position = (8117.0, 5527.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>PCOS</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7486.0, 5272.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Anne having diabetes</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7487.0, 5400.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Age of Anne</NAME>
+	<OUTCOME>Greater than 30</OUTCOME>
+	<OUTCOME>less than 30</OUTCOME>
+	<PROPERTY>position = (7481.0, 5131.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Diabetes Inherited from parents</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7221.0, 5401.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Prediction for child having diabetes</FOR>
+	<GIVEN>Age of Child</GIVEN>
+	<GIVEN>Obesity</GIVEN>
+	<GIVEN>Anne having diabetes</GIVEN>
+	<TABLE>0.95 0.05 0.9 0.1 0.4 0.6 0.25 0.75 0.85 0.15 0.8 0.2 0.15 0.85 0.02 0.98</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Age of Child</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Obesity</FOR>
+	<GIVEN>Gender</GIVEN>
+	<TABLE>0.68 0.32 0.59 0.41</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Gender</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>PCOS</FOR>
+	<GIVEN>Age of Anne</GIVEN>
+	<TABLE>0.02 0.98 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Anne having diabetes</FOR>
+	<GIVEN>PCOS</GIVEN>
+	<GIVEN>Diabetes Inherited from parents</GIVEN>
+	<TABLE>0.25 0.75 0.1 0.9 0.15 0.85 0.02 0.98</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Age of Anne</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Diabetes Inherited from parents</FOR>
+	<TABLE>0.75 0.25</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

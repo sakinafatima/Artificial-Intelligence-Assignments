@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Weather</NAME>
+	<OUTCOME>sunny</OUTCOME>
+	<OUTCOME>overcast</OUTCOME>
+	<OUTCOME>raining</OUTCOME>
+	<OUTCOME>snowing</OUTCOME>
+	<PROPERTY>position = (7333.693359375, 5055.6015625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Peak Time</NAME>
+	<OUTCOME>True</OUTCOME>
+	<OUTCOME>False</OUTCOME>
+	<PROPERTY>position = (7669.64453125, 5071.54443359375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Day</NAME>
+	<OUTCOME>Holiday</OUTCOME>
+	<OUTCOME>Working</OUTCOME>
+	<PROPERTY>position = (7820.1083984375, 5111.00048828125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>People with Car</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7778.0625, 5209.7890625)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Prediction for traffic congestion</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7571.8544921875, 5300.08984375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Camera</NAME>
+	<OUTCOME>High</OUTCOME>
+	<OUTCOME>Low</OUTCOME>
+	<PROPERTY>position = (7492.783203125, 5133.03271484375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Alert Triggered</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7575.5625, 5408.18017578125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Visibility Factor</NAME>
+	<OUTCOME>High</OUTCOME>
+	<OUTCOME>Low</OUTCOME>
+	<PROPERTY>position = (7333.86767578125, 5174.4951171875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Bad Fault Tolerence</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7491.23583984375, 5047.81982421875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>wong Values</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7191.89208984375, 5173.6318359375)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Weather</FOR>
+	<TABLE>0.25 0.25 0.25 0.25</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Peak Time</FOR>
+	<TABLE>0.37 0.63</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Day</FOR>
+	<TABLE>0.22 0.78</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>People with Car</FOR>
+	<GIVEN>Day</GIVEN>
+	<TABLE>0.3 0.7 0.6 0.4</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Prediction for traffic congestion</FOR>
+	<GIVEN>Peak Time</GIVEN>
+	<GIVEN>People with Car</GIVEN>
+	<GIVEN>Visibility Factor</GIVEN>
+	<TABLE>1.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.7 0.3 0.7 0.3 0.7 0.3 0.7 0.3</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Camera</FOR>
+	<GIVEN>Bad Fault Tolerence</GIVEN>
+	<TABLE>0.45 0.55 0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Alert Triggered</FOR>
+	<GIVEN>Prediction for traffic congestion</GIVEN>
+	<TABLE>0.9 0.1 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Visibility Factor</FOR>
+	<GIVEN>Weather</GIVEN>
+	<GIVEN>wong Values</GIVEN>
+	<TABLE>0.95 0.05 1.0 0.0 0.55 0.45 0.6 0.4 0.25 0.75 0.3 0.7 0.1 0.9 0.15 0.85</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Bad Fault Tolerence</FOR>
+	<TABLE>0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>wong Values</FOR>
+	<TABLE>0.05 0.95</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
